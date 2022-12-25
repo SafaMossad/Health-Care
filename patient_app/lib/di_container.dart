@@ -15,6 +15,7 @@ import 'package:patient_app/domain/use_case/auth/auth_login_use_case.dart';
 import 'package:patient_app/domain/use_case/auth/auth_register_use_case.dart';
 import 'package:patient_app/domain/use_case/doctor/doctor_use_case.dart';
 import 'package:patient_app/domain/use_case/doctor/request_doctor_use_case.dart';
+import 'package:patient_app/domain/use_case/doctor/top_doctor_use_case.dart';
 
 import 'package:patient_app/domain/use_case/local/save_user_id.dart';
 import 'package:patient_app/domain/use_case/profile/profile_use_case.dart';
@@ -25,6 +26,7 @@ import 'package:patient_app/presentation/pages/home/view_model/doctors_view_mode
 import 'package:patient_app/presentation/pages/home/view_model/request_doctor_view_model.dart';
 import 'package:patient_app/presentation/pages/profile/view_model/profile_view_model.dart';
 import 'package:patient_app/presentation/pages/reservations/view_model/reservation_view_model.dart';
+import 'package:patient_app/presentation/pages/top_rate_doctors/view_model/top_rate_doctors_view_model.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -63,6 +65,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => RequestDoctorsUseCase(sl()));
   sl.registerLazySingleton(() => ReservationsUseCase(sl()));
   sl.registerLazySingleton(() => ProfileUseCase(sl()));
+  sl.registerLazySingleton(() => TopDoctorsUseCase(sl()));
 
   ///View Model
   sl.registerLazySingleton(() => RegisterViewModel(
@@ -72,8 +75,9 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => RequestDoctorsViewModel(requestDoctorUseCase: sl()));
 
-  sl.registerLazySingleton(
-      () => ProfileViewModel( profileUseCase: sl()));
+  sl.registerLazySingleton(() => ProfileViewModel(profileUseCase: sl()));
+
+  sl.registerLazySingleton(() => TopRateDoctorsViewModel(doctorsUseCase: sl()));
 
   sl.registerLazySingleton(() => DoctorsViewModel(doctorsUseCase: sl()));
   sl.registerLazySingleton(
@@ -96,7 +100,7 @@ Future<void> init() async {
   sl.registerLazySingleton<BaseAuthRepository>(
       () => AuthRepository(dioClient: sl(), sharedPreferences: sl()));
 
-   sl.registerLazySingleton<BaseProfileRepository>(
+  sl.registerLazySingleton<BaseProfileRepository>(
       () => ProfileRepository(dioClient: sl(), sharedPreferences: sl()));
 
   sl.registerLazySingleton<BaseReservationRepository>(

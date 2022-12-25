@@ -30,7 +30,7 @@ class ReservationsViewModel extends ChangeNotifier {
     if (responseModel.isSuccess) {
       List<ReservationsModel>? data = responseModel.data;
       _doctorsList = data;
-      print(_doctorsList);
+      print("==>${_doctorsList}");
 
     } else {
       print("Fail view Model ${responseModel.message}");

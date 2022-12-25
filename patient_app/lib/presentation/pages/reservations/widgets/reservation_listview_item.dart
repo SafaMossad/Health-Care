@@ -69,14 +69,14 @@ class _ReservationWidgetState extends State<ReservationWidget> {
             size: 50.w,
           ),
           title: CustomText(
-            text: widget.reservation?.doctor?.name ?? "",
+            text: widget.reservation?.name ?? "",
             textStyle: Theme.of(context)
                 .textTheme
                 .labelLarge!
                 .copyWith(fontWeight: FontWeightManager.bold),
           ),
           subtitle: CustomText(
-              text: widget.reservation?.doctor?.specialist ?? "",
+              text: widget.reservation?.specialist ?? "",
               textStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
                 color: ColorManager.primaryColor,
                 fontWeight: FontWeightManager.medium

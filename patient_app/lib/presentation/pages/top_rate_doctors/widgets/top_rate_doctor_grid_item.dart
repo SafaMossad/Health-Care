@@ -7,12 +7,12 @@ import 'package:patient_app/data/models/doctors/doctor_model.dart';
 import 'package:provider/provider.dart';
 import '../../../component/components.dart';
 import '../../../component/constants/constant.dart';
-import '../view_model/request_doctor_view_model.dart';
+import '../../home/view_model/request_doctor_view_model.dart';
 
-class HomeGridWidget extends StatelessWidget {
+class TopRateDoctorsGridWidget extends StatelessWidget {
   final DoctorModel? doctor;
 
-  const HomeGridWidget({
+  const TopRateDoctorsGridWidget({
     Key? key,
     required this.doctor,
   }) : super(key: key);

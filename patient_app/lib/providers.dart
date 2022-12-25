@@ -6,6 +6,7 @@ import 'package:patient_app/presentation/pages/home/view_model/doctors_view_mode
 import 'package:patient_app/presentation/pages/home/view_model/request_doctor_view_model.dart';
 import 'package:patient_app/presentation/pages/profile/view_model/profile_view_model.dart';
 import 'package:patient_app/presentation/pages/reservations/view_model/reservation_view_model.dart';
+import 'package:patient_app/presentation/pages/top_rate_doctors/view_model/top_rate_doctors_view_model.dart';
 
 import 'package:provider/provider.dart';
 
@@ -27,6 +28,7 @@ class AppProviders extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => sl<RequestDoctorsViewModel>()),
         ChangeNotifierProvider(create: (context) => sl<ReservationsViewModel>()),
         ChangeNotifierProvider(create: (context) => sl<ProfileViewModel>()),
+        ChangeNotifierProvider(create: (context) => sl<TopRateDoctorsViewModel>()),
 
       ],
       child: child,

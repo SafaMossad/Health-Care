@@ -30,14 +30,16 @@ class ReservationsUseCase {
     if (apiResponse.response != null &&
         apiResponse.response!.statusCode == 200) {
       //BaseModel baseModel = BaseModel.fromJson(apiResponse.response!.data);
-      print("Doctors ${apiResponse.response!.data}");
+      print("Reservations ${apiResponse.response!.data}");
 
       List<ReservationsModel> coursesList = [];
       apiResponse.response!.data.forEach(
           (object) => coursesList.add(ReservationsModel.fromJson(object)));
+      print("Reservations= $coursesList");
+
       responseModel = ResponseModel<List<ReservationsModel>>(true, 'successful',
           data: coursesList);
-      print("Doctors $coursesList");
+      print("Reservations $coursesList");
     } else {
       ErrorResponse baseModel =
           ErrorResponse.fromJson(apiResponse.response!.data);

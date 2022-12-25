@@ -6,6 +6,7 @@ import '../../../../domain/provider/local_auth_provider.dart';
 import '../../component/constants/constant.dart';
 import '../home/home.dart';
 import '../reservations/reservations.dart';
+import '../top_rate_doctors/pages/top_rate_doctors.dart';
 
 
 class BottomNavigationPage extends StatefulWidget {
@@ -21,6 +22,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   final screens = [
     const HomePage(),
 
+    const TopRateDoctorsPage(),
     const ReservationsPage(),
     const ProfilePage(),
   ];
@@ -69,6 +71,10 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
                const BottomNavigationBarItem(
                   icon: Icon(Icons.home),
                   label: "Home",
+                ),
+                const BottomNavigationBarItem(
+                  icon: Icon(Icons.star),
+                  label: "To Rate Doctors",
                 ),
                 const BottomNavigationBarItem(
                   icon: Icon(Icons.work_history),

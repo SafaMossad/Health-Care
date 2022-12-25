@@ -15,11 +15,11 @@ class CustomNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInImage(
-        placeholder: AssetImage(AssetsManager.iMedLogo),
+        placeholder: const AssetImage(AssetsManager.appLogo),
         image: NetworkImage(image),
         imageErrorBuilder: (context, error, stackTrace) {
           return Image.asset(
-            AssetsManager.iMedLogo,
+            AssetsManager.appLogo,
         height: height,
         width: width,
         fit: boxFit
